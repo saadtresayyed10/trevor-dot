@@ -15,7 +15,13 @@ export class UserClass {
     this.prismaClient = prismaClient;
   }
 
-  async createUser({ id, firstName, lastName, email, profilePic }: CreateUser) {
+  async createUser(
+    id: string,
+    firstName: string,
+    lastName: string,
+    email: string,
+    profilePic: string
+  ) {
     const existingUser = await this.prismaClient.users.findUnique({
       where: { email },
     });
