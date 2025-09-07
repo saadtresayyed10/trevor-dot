@@ -1,6 +1,3 @@
-"use client";
-
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 const Dashboard = async () => {
@@ -9,7 +6,10 @@ const Dashboard = async () => {
 
   return (
     <div>
-      <LogoutLink>Sign Out</LogoutLink>
+      <p>{user?.id}</p>
+      <p>
+        {user?.given_name} {user?.family_name}
+      </p>
       <p>{user?.email}</p>
     </div>
   );
