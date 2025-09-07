@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Users {
-  id              String   @id @map("_id") @db.ObjectId
+  id              String   @id @map("_id")
   first_name      String
   last_name       String?
   email           String   @unique

@@ -1,16 +1,20 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import React from "react";
+import DashboardUser from "../_components/Dashboard/DashboardUser";
 
 const Dashboard = async () => {
   const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  const kUser = await getUser();
 
   return (
     <div>
-      <p>{user?.id}</p>
-      <p>
-        {user?.given_name} {user?.family_name}
-      </p>
-      <p>{user?.email}</p>
+      <DashboardUser
+        id={kUser?.id!}
+        firstName={kUser?.given_name!}
+        lastName={kUser?.family_name!}
+        email={kUser?.email!}
+        profilePic={kUser?.picture!}
+      />
     </div>
   );
 };

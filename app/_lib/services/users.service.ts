@@ -1,13 +1,5 @@
 import prisma from "../dbORM";
 
-interface CreateUser {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  profilePic: string;
-}
-
 export class UserClass {
   private prismaClient;
 
